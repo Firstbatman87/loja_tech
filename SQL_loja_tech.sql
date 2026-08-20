@@ -1,5 +1,6 @@
 create database loja_tech;
 use loja_tech;
+
 create table cliente (
 id_cliente int auto_increment primary key,
 nome varchar(100) not null,
@@ -11,6 +12,7 @@ cidade varchar(50) not null,
 estado char(2) not null,
 data_cadastro date not null
 );
+
 show tables;
 
 create table funcionario (
@@ -23,3 +25,6 @@ cargo varchar(50) not null,
 salario decimal(10,2) not null,
 data_admissao date not null
 );
+
+show tables;
+
