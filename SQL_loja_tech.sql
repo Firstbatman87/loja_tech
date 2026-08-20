@@ -107,3 +107,14 @@ foreign key (id_produto) references produto(id_produto)
 );
 
 show tables;
+
+create table pagamento (
+id_pagamento int primary key auto_increment,
+id_pedido int not null,
+data_pagamento datetime,
+valor decimal(10, 2) not null,
+forma_pagamento varchar(30) not null,
+status varchar(20) not null,
+
+foreign key (id_pedido) references pedido(id_pedido)
+);
