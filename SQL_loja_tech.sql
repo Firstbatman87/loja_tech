@@ -54,7 +54,7 @@ id_produto int primary key auto_increment,
 id_categoria int not null,
 id_fornecedor int not null,
 nome varchar(150) not null,
-dercicao text,
+descricao text,
 preco decimal(10, 2) not null,
 custo decimal(10, 2) not null,
 codigo_barras varchar(30) not null unique,
@@ -75,6 +75,34 @@ quantidade int not null default 0,
 estoque_minimo int not null default 5,
 ultima_atualizacao datetime not null,
 
+foreign key (id_produto) references produto(id_produto)
+);
+
+show tables;
+
+create table pedido (
+id_pedido int primary key auto_increment,
+id_cliente int not null,
+id_funcionario int not null,
+data_pedido datetime not null,
+status varchar(30) not null,
+valor_total decimal(10, 2) not null,
+
+foreign key (id_cliente) references cliente(id_cliente),
+foreign key (id_funcionario) references funcionario(id_funcionario)
+);
+
+show tables;
+
+create table item_pedido (
+id_item int primary key auto_increment,
+id_pedido int not null,
+id_produto int not null,
+quantidade int not null,
+preco_unitario decimal(10, 2) not null,
+desconto decimal (10, 2) default 0,
+
+foreign key (id_pedido) references pedido(id_pedido),
 foreign key (id_produto) references produto(id_produto)
 );
 
