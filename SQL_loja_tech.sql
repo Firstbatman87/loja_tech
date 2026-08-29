@@ -15,16 +15,16 @@ data_cadastro date not null
 
 show tables;
 
-	create table funcionario (
-	id_funcionario int primary key auto_increment,
-	nome varchar(100) not null,
-	cpf varchar(14) not null unique,
-	email varchar(100) not null unique,
-	telefone varchar(16) not null unique,
-	cargo varchar(50) not null,
-	salario decimal(10,2) not null,
-	data_admissao date not null
-	);
+create table funcionario (
+id_funcionario int primary key auto_increment,
+nome varchar(100) not null,
+cpf varchar(14) not null unique,
+email varchar(100) not null unique,
+telefone varchar(16) not null unique,
+cargo varchar(50) not null,
+salario decimal(10,2) not null,
+data_admissao date not null
+);
 
 show tables;
 
@@ -653,7 +653,6 @@ INSERT INTO estoque (id_produto, quantidade, estoque_minimo, ultima_atualizacao)
 ((SELECT id_produto FROM produto WHERE codigo_barras = '7891000000149'), 85, 15, '2024-04-13 15:30:00'),
 ((SELECT id_produto FROM produto WHERE codigo_barras = '7891000000150'), 240, 45, '2024-04-14 09:05:00');
 
--- Inserção de 50 registros na tabela PEDIDO
 INSERT INTO pedido (id_cliente, id_funcionario, data_pedido, status, valor_total) VALUES
 (1, 1, '2024-01-05 08:30:00', 'Entregue', 150.00),
 (2, 3, '2024-01-06 09:15:00', 'Entregue', 280.50),
@@ -758,9 +757,7 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, desc
 (47, 4, 1, 115.00, 0.00),
 (48, 10, 2, 1445.00, 0.00),
 (49, 1, 1, 50.00, 0.00),
-(50, 7, 2, 215.40, 0.00);
-
-INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, desconto) VALUES
+(50, 7, 2, 215.40, 0.00),
 (1, 41, 1, 45.00, 0.00),
 (1, 110, 1, 2.80, 0.00),
 (2, 5, 1, 299.90, 19.40),
@@ -811,9 +808,7 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, desc
 (47, 117, 1, 45.00, 0.00),
 (48, 21, 1, 2199.00, 0.00),
 (49, 61, 1, 49.90, 0.00),
-(50, 24, 1, 449.00, 18.20);
-
-INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, desconto) VALUES
+(50, 24, 1, 449.00, 18.20),
 (1, 191, 1, 45.00, 0.00),
 (1, 260, 1, 2.80, 0.00),
 (2, 155, 1, 299.90, 19.40),
