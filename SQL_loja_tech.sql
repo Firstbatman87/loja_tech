@@ -672,3 +672,39 @@ INSERT INTO pagamento (id_pedido, forma_pagamento, valor, data_pagamento, status
 (2, 'Cartão de Crédito', 1800.00, '2024-02-02 14:16:00', 'APROVADO'),
 (3, 'Cartão de Débito', 350.00, '2024-02-03 16:46:00', 'APROVADO'),
 (4, 'Boleto Bancário', 14500.00, '2024-02-06 08:00:00', 'APROVADO');
+
+select count(*) as qtd_categoria from categoria;
+
+select sum(salario) as soma_funcionario from funcionario;
+
+select count(*) as total_funcionario, sum(salario) as total_salario from funcionario;
+
+select avg(salario) as media_salario from funcionario;
+
+select max(salario) as maior_salario from funcionario;
+
+select min(salario) as menor_salario from funcionario;
+
+select cargo, max(salario) as maior_salario, min(salario) as menor_salario from funcionario group by cargo;
+
+select marca, count(*) as quantidade from produto group by marca;
+
+select id_categoria, count(*) as quantidade from produto group by id_categoria;
+
+select status, count(*) as quantidade_pedidos from pedido group by status;
+
+select estado, count(*) as quantidade_cliente from cliente group by estado order by estado desc;
+
+select cidade, count(*) as quantidade_cidade from cliente group by cidade order by quantidade_cidade;
+
+select cargo, avg(salario) as media_salario from funcionario group by cargo order by media_salario desc;
+
+select estado, count(*) as quantidade from cliente group by estado having count(*) > 3;
+
+select cidade, count(*) as quantidade from cliente group by cidade having count(*) > 1;
+
+select cargo, count(*) as quantidade from funcionario group by cargo having count(*) = 1;
+
+select estado, count(*) as quantidade from cliente where data_cadastro >= '2023-01-01' group by estado;
+
+select cargo, round(avg(salario)) as media_salario from funcionario where salario > 4000 group by cargo;
