@@ -2962,3 +2962,45 @@ INSERT INTO internacoes (id, paciente_id, medico_id, hospital_id, data_entrada, 
 (218, 211, 28, 19, '2023-09-16', '2023-09-21', 'Diabetes Descompensada', 'D349', 320.18, 'Alta'),
 (219, 2, 36, 20, '2024-07-25', '2024-08-14', 'Cirurgia Oncológica', 'C387', 1393.82, 'Alta'),
 (220, 293, 19, 13, '2023-07-19', '2023-07-24', 'Crise Hipertensiva', 'B412', 2856.44, 'Alta');
+
+
+-- 1 --
+SELECT * FROM especialidades;
+SELECT * FROM hospitais;
+SELECT * FROM medicamentos;
+SELECT * FROM medicos;
+SELECT * FROM pacientes;
+
+-- 2 --
+select nome, cpf from pacientes;
+select nome, crm from medicos;
+select nome, cidade from hospitais;
+select nome, tipo, preco from medicamentos;
+
+-- 3 --
+select nome as Nome_do_Paciente from pacientes;
+select cpf as cpf_do_paciente from pacientes;
+select salario as salario_mensal from medicos;
+select nome as nome_dos_medicamentos, preco as preco_dos_medicamentos from medicamentos;
+
+-- 4 --
+select * from pacientes where sexo = 'F';
+select * from pacientes where sexo = 'M';
+
+-- 5 --
+select * from medicos where sexo = 'F';
+select * from medicos where sexo = 'M';
+
+-- 6 --
+select * from hospitais where estado = 'pr';
+
+-- 7 --
+select * from pacientes where tipo_sanguineo = 'O+';
+select * from pacientes where tipo_sanguineo = 'A+';
+
+-- 8 --
+select * from medicos where salario > 30000 order by salario desc;
+
+-- 9 --
+select * from hospitais where capacidade_leitos > 400;
+select * from hospitais where capacidade_leitos < 150;
