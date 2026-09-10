@@ -2963,7 +2963,6 @@ INSERT INTO internacoes (id, paciente_id, medico_id, hospital_id, data_entrada, 
 (219, 2, 36, 20, '2024-07-25', '2024-08-14', 'Cirurgia Oncológica', 'C387', 1393.82, 'Alta'),
 (220, 293, 19, 13, '2023-07-19', '2023-07-24', 'Crise Hipertensiva', 'B412', 2856.44, 'Alta');
 
-
 -- 1 --
 SELECT * FROM especialidades;
 SELECT * FROM hospitais;
@@ -3004,3 +3003,29 @@ select * from medicos where salario > 30000 order by salario desc;
 -- 9 --
 select * from hospitais where capacidade_leitos > 400;
 select * from hospitais where capacidade_leitos < 150;
+
+-- 10 --
+select nome, cidade, sexo from pacientes where sexo = 'F' and cidade = 'Curitiba';
+select nome, cidade, sexo from pacientes where sexo = 'M' and cidade = 'sao paulo';
+
+-- 11 --
+select nome, tipo, preco from medicamentos where tipo = 'antibiotico' and preco > 100;
+
+-- 12 --
+select nome, tipo from hospitais where tipo = 'privado' or tipo = 'publico';
+
+-- 13 --
+select * from pacientes order by nome asc;
+select * from medicos order by nome asc;
+
+-- 14 --
+select nome, data_nascimento from pacientes order by data_nascimento asc;
+
+-- 15 --
+select distinct cidade from pacientes;
+
+-- 16 --
+select * from hospitais where capacidade_leitos between 200 and 400;
+
+-- 17 --
+select nome, cidade from pacientes where cidade in ('curitiba', 'sao paulo', 'florianopolis');
